@@ -50,7 +50,7 @@ public class SearchBus extends TestBase {
 
 
 
-    public void validateSearchBus(String source, String destination, String expDate, String expMonth) {
+    public void validateSearchBus(String source, String destination, String expDate, String expMonth) throws InterruptedException {
         busFrom.sendKeys(source);
         busTo.sendKeys(destination);
 
@@ -58,9 +58,7 @@ public class SearchBus extends TestBase {
 
         dateTab.click();
 
-//        expDate = "20";
-//        expMonth = 5;
-//        expYear=2024;
+
         dateNotFound = true;
 
 
@@ -73,24 +71,25 @@ public class SearchBus extends TestBase {
 
 
                 List<WebElement> list1 = driver.findElements(By.xpath("//*[@id='Layer_1']"));
+            //Thread.sleep(1000);
 
                 WebElement nextButton = list1.get(list1.size()-1);
                 WebElement previousButton = list1.get(0);
 
 
                 ////If current selected month and year are same as expected month and year then go Inside this condition.
-                if(monthList.indexOf(calMonth)+1 == Integer.parseInt(expMonth)){
+                if(monthList.indexOf(calMonth)+1 == expMonth.charAt(0) -'0'){
                     selectDate(expDate);
                     dateNotFound = false;
                 }
 
                 //If current selected month and year are less than expected month and year then go Inside this condition
-                else if(monthList.indexOf(calMonth)+1 <Integer.parseInt(expMonth) ){
+                else if(monthList.indexOf(calMonth)+1 <expMonth.charAt(0) -'0' ){
                     //Click on next button of date picker.
                     nextButton.click();
                 }
                 //If current selected month and year are greater than expected month and year then go Inside this condition.
-                else if(monthList.indexOf(calMonth)+1 >Integer.parseInt(expMonth)){
+                else if(monthList.indexOf(calMonth)+1 >expMonth.charAt(0) -'0'){
                     previousButton.click();
                 }
             }

@@ -29,7 +29,7 @@ public class LoginPageTest extends TestBase{
 	}
 	
 	@Test
-	public void validateGoogleSignInButtonTest() {
+	public void validateGoogleSignInButtonTest() throws InterruptedException {
 		loginPage.validateGoogleSignInButton();
 		// Validate if Google sign-In button is present or not.
 	}
@@ -52,9 +52,9 @@ public class LoginPageTest extends TestBase{
 		//Validated the successful Sign-in by checking for the SignOut Button.
 	}
 
-//	@AfterMethod
-//	public void tearDown(){
-//		driver.quit();
-//	}
+	@AfterMethod
+	public void tearDown(){
+		driver.quit();
+	}
 
 }

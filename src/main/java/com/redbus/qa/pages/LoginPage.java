@@ -51,12 +51,14 @@ public class LoginPage extends TestBase{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void validateGoogleSignInButton() {
+	public void validateGoogleSignInButton() throws InterruptedException {
 
 		driver.switchTo().frame(iFrameP);
 		driver.switchTo().frame(iFrameS);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TestUtil.EXPLICIT_WAIT));
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(signInWithGoogle));
+
+		Thread.sleep(5000);
+		wait.until(ExpectedConditions.elementToBeClickable(signInWithGoogle));
 
 		signInWithGoogle.click();
 	}

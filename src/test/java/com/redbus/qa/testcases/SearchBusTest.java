@@ -36,7 +36,7 @@ public class SearchBusTest extends TestBase {
 
 
     @Test(dataProvider = "getSearchBusData")
-    public void validateSearchBusTest(String source, String destination, String date, String month) {
+    public void validateSearchBusTest(String source, String destination, String date, String month) throws InterruptedException {
         searchBus.validateSearchBus(source, destination, date, month);
     }
 
