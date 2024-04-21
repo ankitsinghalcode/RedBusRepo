@@ -25,13 +25,13 @@ public class CancelTicketTest extends TestBase {
         cancelTicket= new CancelTicket();
     }
 
-    @Test(enabled = true)
+    @Test(groups= {"smoke"})
     public void validateCancelTicketTest(){
         boolean flag= cancelTicket.validateCancelTicket();
         Assert.assertTrue(flag);
     }
 
-    @Test(enabled = true)
+    @Test
     public void validateCorrectTicketNoWarningTest(){
 
         String incorrectTicketNoWarning = cancelTicket.validateCorrectTicketNoWarning();

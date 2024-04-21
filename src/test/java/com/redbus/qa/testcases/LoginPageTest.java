@@ -28,7 +28,7 @@ public class LoginPageTest extends TestBase{
 
 	}
 	
-	@Test
+	@Test(groups= {"smoke"})
 	public void validateGoogleSignInButtonTest() throws InterruptedException {
 		loginPage.validateGoogleSignInButton();
 		// Validate if Google sign-In button is present or not.
@@ -40,7 +40,7 @@ public class LoginPageTest extends TestBase{
 		//Validate if user is able to close the Login/SignUp popup.
 	}
 
-	@Test
+	@Test(groups= {"smoke"})
 	public void validateGoogleSignInTest() throws InterruptedException {
 		loginPage.validateGoogleSignIn();
 		//Validate if user is able to Sign In using Google.

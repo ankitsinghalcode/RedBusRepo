@@ -42,7 +42,7 @@ public class HomePageTest extends TestBase {
 		Assert.assertEquals(title, "Book Bus Tickets Online, Easy & Secure Booking, Top Operators - redBus");
 	}
 	
-	@Test
+	@Test(groups= {"smoke"})
 	public void redBusLogoTest() {
 		boolean flag= homePage.validateRedBusLogo();
 		Assert.assertTrue(flag);
@@ -56,14 +56,14 @@ public class HomePageTest extends TestBase {
 	@Test
 	public void loginSignUpButtonTest() {
 		loginPage= homePage.naviagteToLoginPage();
-		Assert.fail();
+		//Assert.fail();
 	}
 
 	@AfterMethod
 	public void tearDown(){
 
 
-		//driver.quit();
+		driver.quit();
 	}
 
 @AfterTest

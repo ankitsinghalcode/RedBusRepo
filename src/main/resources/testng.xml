@@ -11,9 +11,9 @@
     <test name="RedBus Test Cases">
         <classes>
             <class name="com.redbus.qa.testcases.HomePageTest"/>
-<!--            <class name="com.redbus.qa.testcases.LoginPageTest"/>-->
-<!--            <class name="com.redbus.qa.testcases.SearchBusTest"/>-->
-<!--            <class name="com.redbus.qa.testcases.CancelTicketTest"/>-->
+            <class name="com.redbus.qa.testcases.LoginPageTest"/>
+            <class name="com.redbus.qa.testcases.SearchBusTest"/>
+            <class name="com.redbus.qa.testcases.CancelTicketTest"/>
         </classes>
     </test>
 </suite>
